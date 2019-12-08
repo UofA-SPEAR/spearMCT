@@ -1,0 +1,194 @@
+{
+    "name": "Rover",
+    "key": "rv",
+    "modules": [
+        {
+            "name": "Battery",
+            "key": "rv.battery",
+            "graph": true,
+            "values": [
+                {
+                    "name": "Voltage",
+                    "key": "rv.battery.voltage",
+                    "units": "V",
+                    "format": "float",
+                    "min": 0,
+                    "max": 100,
+                    "hints": {
+                        "range": 1
+                    },
+                    "topic": "web-test-battery",
+                    "message-type": "std_msgs/Float64"
+                },
+                {
+                    "name": "Timestamp",
+                    "key": "utc",
+                    "source": "timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "CAN Node Status",
+            "key": "rv.can",
+            "graph": false,
+            "values": [
+                {
+                    "name": "Wheel Node",
+                    "key": "rv.can.wheel",
+                    "format": "boolean",
+                    "topic": "web-can-node-wheel",
+                    "message-type": "std_msgs/Bool"
+                },
+                {
+                    "name": "Timestamp",
+                    "key": "utc",
+                    "source": "timestamp",
+                    "format": "utc"
+                }
+            ]
+        },
+        {
+            "name": "Power Usage",
+            "key": "rv.power",
+            "graph": true,
+            "values": [
+                {
+                    "name": "Usage",
+                    "key": "rv.power.usage",
+                    "units": "KW",
+                    "format": "float",
+                    "min": 0,
+                    "max": 100,
+                    "hints": {
+                        "range": 1
+                    },
+                    "topic": "web-power",
+                    "message-type": "std_msgs/Float64"
+                },
+                {
+                    "name": "Timestamp",
+                    "key": "utc",
+                    "source": "timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Arm Joint Angles",
+            "key": "rv.arm",
+            "graph": false,
+            "values": [
+                {
+                    "name": "Angle 1",
+                    "key": "rv.arm.ang1",
+                    "format": "float",
+                    "topic": "web-ang1",
+                    "message-type": "std_msgs/Float64"
+                },
+                {
+                    "name": "Angle 2",
+                    "key": "rv.arm.ang2",
+                    "format": "float",
+                    "topic": "web-ang2",
+                    "message-type": "std_msgs/Float64"
+                },
+                {
+                    "name": "Angle 3",
+                    "key": "rv.arm.ang3",
+                    "format": "float",
+                    "topic": "web-ang3",
+                    "message-type": "std_msgs/Float64"
+                },
+                {
+                    "name": "Timestamp",
+                    "key": "utc",
+                    "source": "timestamp",
+                    "format": "utc"
+                }
+            ]
+        },
+        {
+            "name": "Fuse Status",
+            "key": "rv.fuse",
+            "graph": false,
+            "values": [
+                {
+                    "name": "Arm",
+                    "key": "rv.fuse.arm",
+                    "format": "boolean",
+                    "topic": "web-fuse1",
+                    "message-type": "std_msgs/Bool"
+                },
+                {
+                    "name": "Timestamp",
+                    "key": "utc",
+                    "source": "timestamp",
+                    "format": "utc"
+                }
+            ]
+        },
+        {
+            "name": "Motor Voltages",
+            "key": "rv.motor",
+            "graph": true,
+            "values": [
+                {
+                    "name": "Arm 1",
+                    "key": "rv.motor.arm1",
+                    "format": "float",
+                    "min": 0,
+                    "max": 100,
+                    "hints": {
+                        "range": 1
+                    },
+                    "topic": "web-motor-arm",
+                    "message-type": "std_msgs/Float64"
+                },
+                {
+                    "name": "Timestamp",
+                    "key": "utc",
+                    "source": "timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        }
+    ],
+    "not implemented modules": [
+        {
+            "name": "Localization Status",
+            "key": "rv.local",
+            "graph": false,
+            "values": [
+                {
+                    "name": "Latitude",
+                    "type": "number",
+                    "topic": "web-lat",
+                    "message-type": "std_msgs/Float64"
+                },
+              
+                {
+                    "name": "Longitude",
+                    "type": "number",
+                    "topic": "web-long",
+                    "message-type": "std_msgs/Float64"
+                },
+                {
+                    "name": "Map",
+                    "type": "map",
+                    "topic": "web-latlong",
+                    "message-type": "std_msgs/Float64MultiArray"
+                }
+            ]
+        }
+    ]
+}

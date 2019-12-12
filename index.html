@@ -7,9 +7,12 @@
     <title>ROS MCT | SPEAR</title>
     <script src="node_modules/openmct/dist/openmct.js"></script>
     <script src="lib/http.js"></script>
+    <!--
     <script type="text/javascript" src="modules.js"></script>
     <script type="text/javascript" src="liveTelemetry.js"></script>
     <script type="text/javascript" src="telemetryHistory.js"></script>
+    -->
+    <script type="text/javascript" src="spearMCT.js"></script>
     <link rel="stylesheet" href="css/startup-base.css">
     <link rel="stylesheet" href="css/openmct.css">
     <link rel="icon" type="image/png" href="images/logo-spear.png">
@@ -49,16 +52,17 @@
         openmct.install(openmct.plugins.SummaryWidget());
         openmct.install(OpenMCTMapPlugin());
 
+        openmct.install(spearMCT());
 
+        /*
         openmct.install(ModulePlugin());
         openmct.install(RealtimeTelemetryPlugin());
         openmct.install(HistoricalTelemetryPlugin());
-        
+        */
 
 
         openmct.start();
     </script>
-    <!--<script type="text/javascript">onLoad()</script>-->
 
 </body>
 </html>

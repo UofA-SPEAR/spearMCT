@@ -1,9 +1,9 @@
 module.exports = Rover
 
-function Rover(modules) {
+function Rover(modules, URL) {
 
     var ROSLIB = require('roslib');
-    let URL = 'ws://spear.northcentralus.cloudapp.azure.com:9090';
+    //let URL = 'ws://spear.northcentralus.cloudapp.azure.com:9090';
 
     this.state = {};
     this.history = {};

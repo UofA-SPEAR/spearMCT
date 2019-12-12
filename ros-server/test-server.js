@@ -2,7 +2,7 @@
  * Basic implementation of a history and realtime server.
  */
 
-var URL = 'ws://spear.northcentralus.cloudapp.azure.com:9090'
+var URL = ''
 
 var Rover = require('./rover');
 var RealtimeServer = require('./realtime-server');

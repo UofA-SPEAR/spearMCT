@@ -17,7 +17,7 @@
                     "hints": {
                         "range": 1
                     },
-                    "topic": "web-test-battery",
+                    "topic": "web/battery/voltage",
                     "message-type": "std_msgs/Float64"
                 },
                 {
@@ -40,7 +40,7 @@
                     "name": "Wheel Node",
                     "key": "rv.can.wheel",
                     "format": "boolean",
-                    "topic": "web-can-node-wheel",
+                    "topic": "web/can/wheel",
                     "message-type": "std_msgs/Bool"
                 },
                 {
@@ -66,7 +66,7 @@
                     "hints": {
                         "range": 1
                     },
-                    "topic": "web-power",
+                    "topic": "web/power/usage",
                     "message-type": "std_msgs/Float64"
                 },
                 {
@@ -89,21 +89,21 @@
                     "name": "Angle 1",
                     "key": "rv.arm.ang1",
                     "format": "float",
-                    "topic": "web-ang1",
+                    "topic": "web/ang1",
                     "message-type": "std_msgs/Float64"
                 },
                 {
                     "name": "Angle 2",
                     "key": "rv.arm.ang2",
                     "format": "float",
-                    "topic": "web-ang2",
+                    "topic": "web/ang2",
                     "message-type": "std_msgs/Float64"
                 },
                 {
                     "name": "Angle 3",
                     "key": "rv.arm.ang3",
                     "format": "float",
-                    "topic": "web-ang3",
+                    "topic": "web/ang3",
                     "message-type": "std_msgs/Float64"
                 },
                 {
@@ -123,7 +123,7 @@
                     "name": "Arm",
                     "key": "rv.fuse.arm",
                     "format": "boolean",
-                    "topic": "web-fuse1",
+                    "topic": "web/fuse1",
                     "message-type": "std_msgs/Bool"
                 },
                 {
@@ -148,7 +148,7 @@
                     "hints": {
                         "range": 1
                     },
-                    "topic": "web-motor-arm",
+                    "topic": "web/motor/arm",
                     "message-type": "std_msgs/Float64"
                 },
                 {
@@ -175,7 +175,6 @@
                     "topic": "web-lat",
                     "message-type": "std_msgs/Float64"
                 },
-              
                 {
                     "name": "Longitude",
                     "type": "number",

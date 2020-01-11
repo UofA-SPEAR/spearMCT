@@ -21,7 +21,7 @@
   "dependencies": {
     "express": "^4.14.1",
     "express-ws": "^3.0.0",
-    "openmct": "nasa/openmct",
+    "openmct": "github:nasa/openmct#419285c3960be8a6ebcd24623802c4aca57e4a46",
     "openmct-map": "github:nasa/openmct-map",
     "roslib": "^0.19.0",
     "ws": "^3.3.1"

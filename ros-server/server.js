@@ -2,8 +2,6 @@
  * Basic implementation of a history and realtime server.
  */
 
-var URL = 'ws://spear.northcentralus.cloudapp.azure.com:9090'
-
 var Rover = require('./rover');
 var RealtimeServer = require('./realtime-server');
 var HistoryServer = require('./history-server');
@@ -16,6 +14,7 @@ expressWs(app);
 
 //console.log(JSON.parse(fs.readFileSync('modules.json')))
 let dict = JSON.parse(fs.readFileSync('modules.json'));
+var URL = dict.url
 
 var rover = new Rover(dict, URL);
 var realtimeServer = new RealtimeServer(rover);

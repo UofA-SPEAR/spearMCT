@@ -1,12 +1,12 @@
 {
     "name": "Rover",
     "key": "rv",
-    "url": "ws://spear.northcentralus.cloudapp.azure.com:9090",
+    "url": "ws://localhost:9090",
     "modules": [
         {
             "name": "Battery",
             "key": "rv.battery",
-            "graph": true,
+            "type": "graph",
             "values": [
                 {
                     "name": "Voltage",
@@ -20,6 +20,60 @@
                     },
                     "topic": "web/battery/voltage",
                     "message-type": "std_msgs/Float64"
+                },
+                {
+                    "name": "Timestamp",
+                    "key": "utc",
+                    "source": "timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Velocity",
+            "key": "rv.velocity",
+            "type": "velocity",
+            "message-type": "geometry_msgs/Vector3Stamped",
+            "topic": "gps/fix_velocity",
+            "values": [
+                {
+                    "name": "X",
+                    "key": "rv.velocity.x",
+                    "format": "X Velocity",
+                    "topic": "gps/fix_velocity",
+                    "message-type": "geometry_msgs/Vector3Stamped",
+                    "min": 0,
+                    "max": 100,
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "name": "Y",
+                    "key": "rv.velocity.y",
+                    "format": "Y Velocity",
+                    "topic": "gps/fix_velocity",
+                    "message-type": "geometry_msgs/Vector3Stamped",
+                    "min": 0,
+                    "max": 100,
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "name": "Z",
+                    "key": "rv.velocity.z",
+                    "format": "Z Velocity",
+                    "topic": "gps/fix_velocity",
+                    "message-type": "geometry_msgs/Vector3Stamped",
+                    "min": 0,
+                    "max": 100,
+                    "hints": {
+                        "range": 1
+                    }
                 },
                 {
                     "name": "Timestamp",

@@ -2,6 +2,10 @@
 
 ## How to install
 
+### Acknowledgements
+We are currently using NASA's OpenMCT Tutorial repository as the base of this repository.
+
+
 ### Prerequisites
 - nodejs & npm
 - git (not required)

@@ -162,6 +162,46 @@
                     }
                 }
             ]
+        },
+        {
+            "name": "Twist messages",
+            "key": "rv.twist",
+            "graph": false,
+            "values": [
+                {
+                    "name": "Forward x",
+                    "key": "rv.twist.forward",
+                    "format": "float",
+                    "topic": "web/twist/forward",
+                    "message-type": "std_msgs/Float64",
+                    "min": -10,
+                    "max": 10,
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "name": "Turn z",
+                    "key": "rv.twist.turn",
+                    "format": "float",
+                    "topic": "web/twist/turn",
+                    "message-type": "std_msgs/Float64",
+                    "min": -10,
+                    "max": 10,
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "name": "Timestamp",
+                    "key": "utc",
+                    "source": "timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
         }
     ],
     "not implemented modules": [

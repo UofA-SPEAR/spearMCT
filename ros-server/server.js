@@ -1,7 +1,25 @@
 /**
  * Basic implementation of a history and realtime server.
+
+
+ All of the code in this folder is adapted from NASA's OpenMCT Tutorial.
+ 
  */
 
+
+// Determine if a URL is provided. If not, then run the server in offline mode.
+if (!process.argv[2]) {
+	var URL = ''
+	console.log("No rover IP Address provided, running in offline mode.")
+} else {
+	var URL = process.argv[2]
+	console.log("Connecting to Roslib at: "+process.argv[2])
+}
+
+console.log("\n\nWelcome to SpearMCT!\n\n")
+
+
+// Load modules
 var Rover = require('./rover');
 var RealtimeServer = require('./realtime-server');
 var HistoryServer = require('./history-server');
@@ -12,17 +30,19 @@ var expressWs = require('express-ws');
 var app = require('express')();
 expressWs(app);
 
-//console.log(JSON.parse(fs.readFileSync('modules.json')))
-let dict = JSON.parse(fs.readFileSync('modules.json'));
-var URL = dict.url
 
+
+let dict = JSON.parse(fs.readFileSync('modules.json'));
+
+
+// Init Objects
 var rover = new Rover(dict, URL);
 var realtimeServer = new RealtimeServer(rover);
 var historyServer = new HistoryServer(rover);
 var staticServer = new StaticServer();
 
 
-
+// Start Webhooks
 app.use('/realtime', realtimeServer);
 app.use('/history', historyServer);
 app.use('/', staticServer);

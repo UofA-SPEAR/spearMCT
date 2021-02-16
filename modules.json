@@ -1,7 +1,6 @@
 {
     "name": "Rover",
     "key": "rv",
-    "url": "ws://spear.northcentralus.cloudapp.azure.com:9090",
     "modules": [
         {
             "name": "Battery",

@@ -1,3 +1,6 @@
+// Adapted from NASA's OpenMCT tutorial
+
+
 function ModulePlugin() {
     return function install(openmct) {
         openmct.objects.addRoot({
@@ -44,7 +47,7 @@ var objectProvider = {
     }
 };
 
-function getModules() {
+function getModules() { // Get the JSON for the modules to load - May replace http.js with AJAX
     return http.get('/modules.json')
         .then(function (result) {
             return result.data;

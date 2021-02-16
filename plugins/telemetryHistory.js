@@ -1,5 +1,6 @@
 /**
  * Basic historical telemetry plugin.
+   Adapted from NASA's OpenMCT tutorial
  */
 
 function HistoricalTelemetryPlugin() {

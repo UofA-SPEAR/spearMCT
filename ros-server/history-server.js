@@ -1,3 +1,5 @@
+// All of the code in this folder is adapted from NASA's OpenMCT Tutorial.
+
 var express = require('express');
 
 function HistoryServer(spacecraft) {

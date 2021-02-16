@@ -5,7 +5,6 @@
   "main": "ros-server/server.js",
   "scripts": {
     "start": "node ros-server/server.js",
-    "test": "node ros-server/test-server.js",
     "postinstall": "cd node_modules/openmct && npm install"
   },
   "repository": {

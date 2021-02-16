@@ -2,36 +2,35 @@
 <html>
 <head>
 	<title>SPEAR MCT</title>
+	<link rel="icon" type="image/png" href="images/logo-spear.png">
 	<script src="node_modules/openmct/dist/openmct.js"></script>
-	<script src="lib/http.js"></script>
-	<script type="text/javascript" src="modules.js"></script>
-	<script type="text/javascript" src="liveTelemetry.js"></script>
-	<script type="text/javascript" src="telemetryHistory.js"></script>
+	<script src="lib/http.js"></script> <!-- Tempted to get rid of this and replace with AJAX -->
+	<script type="text/javascript" src="plugins/modules.js"></script>
+	<script type="text/javascript" src="plugins/liveTelemetry.js"></script>
+	<script type="text/javascript" src="plugins/telemetryHistory.js"></script>
 	<script src="node_modules/openmct-map/dist/openmct-map.js"></script>
 </head>
 <body>
 	<script>
-		openmct.setAssetPath('node_modules/openmct/dist');
-		openmct.install(openmct.plugins.Espresso());
+		openmct.setAssetPath('node_modules/openmct/dist'); 
+		openmct.install(openmct.plugins.Espresso()); // Dark theme
 
-		openmct.install(openmct.plugins.LocalStorage());
+		openmct.install(openmct.plugins.LocalStorage()); // Custom Items and Browser Storage for said items
 		openmct.install(openmct.plugins.MyItems());
 		
 
-		openmct.install(openmct.plugins.UTCTimeSystem());
-		
-		openmct.time.clock('local',
-			{start: -5 * 60 * 1000, end: 0} //graphs show up to 5 min before
-		);
+		openmct.install(openmct.plugins.UTCTimeSystem()); // Time for graphs.
+		openmct.time.clock('local', {start: -5 * 60 * 1000, end: 0}); // show up to 5 min before
 		openmct.time.timeSystem('utc');
 
-		openmct.install(openmct.plugins.Generator());
+
+		openmct.install(openmct.plugins.Generator()); // Loading Assorted plugins
         openmct.install(openmct.plugins.SummaryWidget());
         openmct.install(OpenMCTMapPlugin());
 		
 
 
-		openmct.install(ModulePlugin());
+		openmct.install(ModulePlugin()); // Loading Plugins for the main usecase
 		openmct.install(RealtimeTelemetryPlugin());
 		openmct.install(HistoricalTelemetryPlugin());
 

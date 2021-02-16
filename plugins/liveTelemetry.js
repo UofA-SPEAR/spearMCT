@@ -1,5 +1,6 @@
 /**
  * Basic Realtime telemetry plugin using websockets.
+   Adapted from NASA's OpenMCT tutorial
  */
 function RealtimeTelemetryPlugin() {
     return function (openmct) {

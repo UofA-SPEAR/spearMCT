@@ -7,6 +7,7 @@
 	<script type="text/javascript" src="modules.js"></script>
 	<script type="text/javascript" src="liveTelemetry.js"></script>
 	<script type="text/javascript" src="telemetryHistory.js"></script>
+	<script src="node_modules/openmct-map/dist/openmct-map.js"></script>
 </head>
 <body>
 	<script>
@@ -15,14 +16,19 @@
 
 		openmct.install(openmct.plugins.LocalStorage());
 		openmct.install(openmct.plugins.MyItems());
+		
 
 		openmct.install(openmct.plugins.UTCTimeSystem());
-		/*
+		
 		openmct.time.clock('local',
 			{start: -5 * 60 * 1000, end: 0} //graphs show up to 5 min before
 		);
 		openmct.time.timeSystem('utc');
-		*/
+
+		openmct.install(openmct.plugins.Generator());
+        openmct.install(openmct.plugins.SummaryWidget());
+        openmct.install(OpenMCTMapPlugin());
+		
 
 
 		openmct.install(ModulePlugin());

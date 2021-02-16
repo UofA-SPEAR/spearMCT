@@ -15,6 +15,13 @@ function Rover(modules, URL) {
         this.history[modules['modules'][x].key] = [];
         for (let y=0; y < modules['modules'][x]["values"].length; y++) {
             let cModule = modules['modules'][x]["values"][y];
+            if (cModule["attribute"] != "N/A") {
+                
+            }
+        }
+        /*
+        for (let y=0; y < modules['modules'][x]["values"].length; y++) {
+            let cModule = modules['modules'][x]["values"][y];
             if (cModule.key !== 'timestamp') {
                 let tempTopic = new ROSLIB.Topic({
                     ros : ros,
@@ -24,7 +31,7 @@ function Rover(modules, URL) {
                 this.callbackHandler(tempTopic,cModule,this);
             }
             
-        }
+        }*/
 
     }
 

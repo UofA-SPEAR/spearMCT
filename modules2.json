@@ -6,7 +6,9 @@
         {
             "name": "Battery",
             "key": "rv.battery",
-            "type": "graph",
+            "type": "Battery",
+            "message-type": "sensor_msgs/BatteryState",
+            "topic": "/battery",
             "values": [
                 {
                     "name": "Voltage",
@@ -18,8 +20,7 @@
                     "hints": {
                         "range": 1
                     },
-                    "topic": "web/battery/voltage",
-                    "message-type": "std_msgs/Float64"
+                    "attribute": "voltage"
                 },
                 {
                     "name": "Timestamp",
@@ -28,7 +29,29 @@
                     "format": "utc",
                     "hints": {
                         "domain": 1
-                    }
+                    },
+                    "attribute": "N/A"
+                }
+            ]
+        }
+    ],
+    "not implemented modules": [
+        {
+            "name": "Localization Status",
+            "key": "rv.local",
+            "graph": false,
+            "values": [
+                {
+                    "name": "Latitude",
+                    "type": "lat",
+                    "topic": "/gps/fix",
+                    "message-type": "std_msgs/Float64"
+                },
+                {
+                    "name": "Longitude",
+                    "type": "long",
+                    "topic": "/gps/fix",
+                    "message-type": "std_msgs/Float64"
                 }
             ]
         },
@@ -214,27 +237,6 @@
                     "hints": {
                         "domain": 1
                     }
-                }
-            ]
-        }
-    ],
-    "not implemented modules": [
-        {
-            "name": "Localization Status",
-            "key": "rv.local",
-            "graph": false,
-            "values": [
-                {
-                    "name": "Latitude",
-                    "type": "lat",
-                    "topic": "/gps/fix",
-                    "message-type": "std_msgs/Float64"
-                },
-                {
-                    "name": "Longitude",
-                    "type": "long",
-                    "topic": "/gps/fix",
-                    "message-type": "std_msgs/Float64"
                 }
             ]
         }

@@ -11,11 +11,12 @@
                 {
                     "name": "Voltage",
                     "key": "rv.battery.voltage",
-                    "units": "V",
+                    "units": "Voltage",
                     "format": "float",
                     "min": 0,
                     "max": 100,
                     "hints": {
+                        "y": 1,
                         "range": 1
                     },
                     "topic": "web/battery/voltage",
@@ -27,6 +28,7 @@
                     "source": "timestamp",
                     "format": "utc",
                     "hints": {
+                        "x": 1,
                         "domain": 1
                     }
                 }

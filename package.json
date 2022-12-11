@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/UofA-SPEAR/spearMCT#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-ws": "^4.0.0",
     "openmct": "^1.6.1",
     "roslib": "^1.1.0",
